@@ -7,7 +7,7 @@
 \chapter{ANALISIS MASALAH}
 \label{chap:analisis-masalah}
 \section{Analisis Kondisi Saat Ini}
-Kondisi keamanan di ITB Innovation Park saat ini masih hanya bergantung pada petugas keamanan yang berjaga selama 24 jam dengan sistem pergantian shift, tanpa adanya sistem access control untuk membatasi akses keluar masuk area. Infrastruktur pemantauan yang tersedia pada lantai 9 berupa delapan kamera CCTV konvensional yang terpasang di sepanjang koridor lantai 9 dan tidak mencakup area di dalam ruangan, sehingga cakupan pengawasannya terbatas.
+Kondisi keamanan di ITB Innovation Park saat ini masih hanya bergantung pada petugas keamanan yang berjaga selama 24 jam dengan sistem pergantian \textit{shift}, tanpa adanya sistem \textit{access control} untuk membatasi akses keluar masuk area. Infrastruktur pemantauan yang tersedia pada lantai 9 berupa delapan kamera CCTV konvensional yang terpasang di sepanjang koridor lantai 9 dan tidak mencakup area di dalam ruangan, sehingga cakupan pengawasannya terbatas.
 
 Proses pemantauan rekaman CCTV dilakukan secara manual melalui layar monitor oleh petugas keamanan, di mana kamera hanya berfungsi sebagai perangkat perekam tanpa kemampuan analitik, deteksi otomatis, ataupun sistem peringatan dini. Dari sisi operasional, petugas yang memperhatikan delapan tampilan kamera secara simultan dalam durasi yang panjang, secara manusiawi berpotensi melewatkan kejadian penting akibat kelelahan dan penurunan fokus. Kondisi ini sistem keamanan yang seperti ini berpotensi tidak terdeteksinya kegiatan yang merugikan.
 
@@ -71,20 +71,20 @@ Kebutuhan fungsional menggambarkan fitur dan kemampuan yang harus dimiliki oleh 
 \hline
 \endlastfoot
 
-FR-01 & Input video & Sistem harus mampu menerima input berupa rekaman dari kamera CCTV yang telah terpasang pada ITB Innovation Park. \\ \hline
+FR-01 & \textit{Input} video & Sistem harus mampu menerima \textit{input} berupa rekaman dari kamera CCTV yang telah terpasang pada ITB Innovation Park. \\ \hline
 
 FR-02 & Deteksi perilaku & Sistem harus mampu melakukan analisis terhadap video untuk mengenali pola aktivitas yang dikategorikan sebagai aktivitas mencurigakan. \\ \hline
 
-FR-03 & Visualisasi deteksi & Sistem harus mampu menampilkan hasil deteksi melalui dashboard dalam bentuk visualisasi sederhana yang mudah dipahami petugas. \\ \hline
+FR-03 & Visualisasi deteksi & Sistem harus mampu menampilkan hasil deteksi melalui \textit{dashboard} dalam bentuk visualisasi sederhana yang mudah dipahami petugas. \\ \hline
 
-FR-04 & Pencatatan Aktivitas & Sistem harus dapat mencatat dan menyimpan aktivitas yang terdeteksi dalam bentuk log agar dapat ditinjau kembali. \\ \hline
+FR-04 & Pencatatan Aktivitas & Sistem harus dapat mencatat dan menyimpan aktivitas yang terdeteksi dalam bentuk \textit{log} agar dapat ditinjau kembali. \\ \hline
 
 FR-05 & Notifikasi peringatan & Sistem harus dapat memberikan notifikasi sederhana kepada petugas ketika terdeteksi aktivitas yang memerlukan perhatian. \\ \hline
 
-FR-06 & Akses Dashboard oleh Petugas & Sistem harus menyediakan dashboard yang dapat diakses oleh petugas keamanan untuk memantau hasil analitik secara real-time. \\ \hline
+FR-06 & Akses \textit{Dashboard} oleh Petugas & Sistem harus menyediakan \textit{dashboard} yang dapat diakses oleh petugas keamanan untuk memantau hasil analitik secara \textit{real-time}. \\ \hline
 
 \end{longtable}
-Dengan ini, diharapkan sistem yang dikembangkan mampu melakukan analisis terhadap rekaman CCTV dan mendeteksi pola perilaku yang dikategorikan sebagai aktivitas mencurigakan secara otomatis. Sistem juga diharapkan dapat menampilkan hasil deteksi melalui dashboard yang mudah dipahami, serta menyediakan pencatatan aktivitas dalam bentuk log untuk mendukung proses pelacakan dan evaluasi oleh petugas keamanan. Selain itu, kemampuan memberikan notifikasi sederhana diharapkan dapat membantu mengarahkan perhatian petugas terhadap kejadian tertentu sehingga proses pengawasan dapat berjalan lebih mudah
+Dengan ini, diharapkan sistem yang dikembangkan mampu melakukan analisis terhadap rekaman CCTV dan mendeteksi pola perilaku yang dikategorikan sebagai aktivitas mencurigakan secara otomatis. Sistem juga diharapkan dapat menampilkan hasil deteksi melalui \textit{dashboard} yang mudah dipahami, serta menyediakan pencatatan aktivitas dalam bentuk \textit{log} untuk mendukung proses pelacakan dan evaluasi oleh petugas keamanan. Selain itu, kemampuan memberikan notifikasi sederhana diharapkan dapat membantu mengarahkan perhatian petugas terhadap kejadian tertentu sehingga proses pengawasan dapat berjalan lebih mudah
 \subsection{Kebutuhan Nonfungsional}
 Kebutuhan non-fungsional menjelaskan karakteristik kualitas yang harus dimiliki oleh sistem agar dapat berjalan secara optimal dan dapat digunakan secara efektif oleh petugas keamanan. Kebutuhan ini mencakup aspek kinerja, kemudahan penggunaan, keamanan data, serta keandalan deteksi yang dihasilkan. Tabel berikut merangkum kebutuhan non-fungsional tersebut.
 
@@ -103,17 +103,17 @@ Kebutuhan non-fungsional menjelaskan karakteristik kualitas yang harus dimiliki 
 \hline
 \endlastfoot
 
-NFR-01 & Ketersediaan sistem & Sistem harus memiliki uptime minimal 99,5\% per bulan selama operasi 24 jam. \\ \hline
+NFR-01 & Ketersediaan sistem & Sistem harus memiliki \textit{uptime} minimal 99,5\% per bulan selama operasi 24 jam. \\ \hline
 
-NFR-02 & Waktu respon deteksi & Latency antara kejadian terekam kamera dan alert muncul di dashboard tidak boleh lebih dari 5 detik untuk 95\% kasus. \\ \hline
+NFR-02 & Waktu respon deteksi & \textit{Latency} antara kejadian terekam kamera dan \textit{alert} muncul di \textit{dashboard} tidak boleh lebih dari 5 detik untuk 95\% kasus. \\ \hline
 
-NFR-03 & Performa pemrosesan & Sistem harus mampu memproses stream dari 8 kamera secara paralel dengan penggunaan CPU di bawah 80\%. \\ \hline
+NFR-03 & Performa pemrosesan & Sistem harus mampu memproses \textit{stream} dari 8 kamera secara paralel dengan penggunaan CPU di bawah 80\%. \\ \hline
 
-NFR-04 & Akurasi deteksi & Sistem harus mencapai minimal 85\% detection rate terhadap skenario aktivitas mencurigakan terdefinisi, dengan false positive rate tidak lebih dari 10\% dari total alert harian. \\ \hline
+NFR-04 & Akurasi deteksi & Sistem harus mencapai minimal 85\% \textit{detection rate} terhadap skenario aktivitas mencurigakan terdefinisi, dengan \textit{false positive rate} tidak lebih dari 10\% dari total \textit{alert} harian. \\ \hline
 
-NFR-05 & Keamanan data video & Akses dashboard dibatasi dengan autentikasi dan role-based access control, dan hanya metadata penting (ID kamera, jenis event, timestamp) yang disimpan dalam database. \\ \hline
+NFR-05 & Keamanan data video & Akses \textit{dashboard} dibatasi dengan autentikasi dan \textit{role-based access control}, dan hanya \textit{metadata} penting (ID kamera, jenis \textit{event}, \textit{timestamp}) yang disimpan dalam \textit{database}. \\ \hline
 
-NFR-06 & Kemudahan penggunaan & Dashboard harus memiliki tampilan yang sederhana, dengan tata letak elemen yang jelas dan mudah dipahami oleh petugas keamanan. \\ \hline
+NFR-06 & Kemudahan penggunaan & \textit{Dashboard} harus memiliki tampilan yang sederhana, dengan tata letak elemen yang jelas dan mudah dipahami oleh petugas keamanan. \\ \hline
 
 \end{longtable}
 
@@ -138,19 +138,19 @@ Dalam merancang modul deteksi aktivitas mencurigakan, diperlukan pemilihan metod
 \hline
 \endlastfoot
 
-Rule-based video analytics & Bekerja dengan cepat karena ringan secara komputasi, mudah diterapkan & Tidak mampu memahami konteks perilaku, tidak cocok untuk aktivitas kompleks \\ \hline
+\textit{Rule-based video analytics} & Bekerja dengan cepat karena ringan secara komputasi, mudah diterapkan & Tidak mampu memahami konteks perilaku, tidak cocok untuk aktivitas kompleks \\ \hline
 
-Model ML single object detection & Mampu mengenali keberadaan orang, kendaraan, atau objek berbahaya & Tidak dapat memahami hubungan antar gerakan \\ \hline
+Model ML \textit{single object detection} & Mampu mengenali keberadaan orang, kendaraan, atau objek berbahaya & Tidak dapat memahami hubungan antar gerakan \\ \hline
 
-Machine Learning Multi-event Recognition & Dapat mengenali berbagai jenis aktivitas mencurigakan berbasis pola gerakan, lebih robust untuk perilaku kompleks & Membutuhkan dataset lebih besar, komputasi lebih tinggi, model lebih kompleks \\ \hline
+\textit{Machine Learning Multi-event Recognition} & Dapat mengenali berbagai jenis aktivitas mencurigakan berbasis pola gerakan, lebih \textit{robust} untuk perilaku kompleks & Membutuhkan \textit{dataset} lebih besar, komputasi lebih tinggi, model lebih kompleks \\ \hline
 
-Pendekatan Hybrid (Rule-based + ML) & Mengurangi false alarm, dapat memahami konteks perilaku & Membutuhkan integrasi pipeline yang lebih rumit, membutuhkan tuning parameter lebih teliti \\ \hline
+Pendekatan \textit{Hybrid} (\textit{Rule-based} + ML) & Mengurangi \textit{false alarm}, dapat memahami konteks perilaku & Membutuhkan integrasi \textit{pipeline} yang lebih rumit, membutuhkan \textit{tuning parameter} lebih teliti \\ \hline
 
 \end{longtable}
 \subsection{Analisis Penentuan Solusi}
-Dalam menentukan pendekatan terbaik, penelitian ini menggunakan metode Weighted Scoring Matrix (WSM). WSM merupakan teknik pengambilan keputusan yang membandingkan beberapa alternatif solusi berdasarkan sejumlah parameter yang diberi bobot sesuai tingkat kepentingannya. Metode ini dipilih karena sederhana dan cocok untuk mengambil keputusan yang mengharuskan mempertimbangkan banyak faktor.
+Dalam menentukan pendekatan terbaik, penelitian ini menggunakan metode \textit{Weighted Scoring Matrix} (WSM). WSM merupakan teknik pengambilan keputusan yang membandingkan beberapa alternatif solusi berdasarkan sejumlah parameter yang diberi bobot sesuai tingkat kepentingannya. Metode ini dipilih karena sederhana dan cocok untuk mengambil keputusan yang mengharuskan mempertimbangkan banyak faktor.
 
-Parameter yang digunakan pada WSM meliputi Akurasi, yang menilai sejauh mana setiap pendekatan mampu mengenali aktivitas mencurigakan dengan benar. Efisiensi digunakan untuk menilai seberapa optimal penggunaan komputasi pada masing-masing pendekatan. Kemudahan Implementasi dievaluasi berdasarkan tingkat kompleksitas integrasi solusi ke dalam lingkungan sistem yang sudah ada. Terakhir, Skalabilitas mencerminkan kemampuan pendekatan untuk diterapkan pada banyak kamera tanpa memerlukan perubahan besar pada konfigurasi atau pipeline proses. Hasil skor masing-masing pendekatan pada tiap parameter dapat dilihat pada tabel berikut.
+Parameter yang digunakan pada WSM meliputi Akurasi, yang menilai sejauh mana setiap pendekatan mampu mengenali aktivitas mencurigakan dengan benar. Efisiensi digunakan untuk menilai seberapa optimal penggunaan komputasi pada masing-masing pendekatan. Kemudahan Implementasi dievaluasi berdasarkan tingkat kompleksitas integrasi solusi ke dalam lingkungan sistem yang sudah ada. Terakhir, Skalabilitas mencerminkan kemampuan pendekatan untuk diterapkan pada banyak kamera tanpa memerlukan perubahan besar pada konfigurasi atau \textit{pipeline} proses. Hasil skor masing-masing pendekatan pada tiap parameter dapat dilihat pada tabel berikut.
 
 \renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{6pt}
@@ -161,7 +161,7 @@ Parameter yang digunakan pada WSM meliputi Akurasi, yang menilai sejauh mana set
 \label{tbl:weighted_scoring_matrix} \\
 
 \hline
-\textbf{Parameter} & \textbf{Rule-based} & \textbf{ML Deteksi Objek} & \textbf{ML Multi-event Recognition} & \textbf{Hybrid (Rule-based + ML)} \\ \hline
+\textbf{Parameter} & \textbf{\textit{Rule-based}} & \textbf{ML Deteksi Objek} & \textbf{ML \textit{Multi-event Recognition}} & \textbf{\textit{Hybrid} (\textit{Rule-based} + ML)} \\ \hline
 \endhead
 
 \hline

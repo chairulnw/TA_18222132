@@ -1,9 +1,0 @@
-[0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'ProposalTA.blg'
-[300] biber-MSWIN64:342> INFO - === 
-[467] Biber.pm:421> INFO - Reading 'ProposalTA.bcf'
-[952] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[991] bbl.pm:676> INFO - Writing 'ProposalTA.bbl' with encoding 'UTF-8'
-[992] bbl.pm:779> INFO - Output to ProposalTA.bbl
-[992] Biber.pm:132> WARN - The file 'ProposalTA.bcf' does not contain any citations!
-[992] Biber.pm:134> INFO - WARNINGS: 1

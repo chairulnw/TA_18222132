@@ -3,26 +3,34 @@
 % ==========================================
 \chapter{DESAIN KONSEP SOLUSI}
 \label{chap:desain-konsep-solusi}
-Bab ini menjelaskan rancangan konsep solusi yang diusulkan berdasarkan pendekatan yang telah dipilih pada Bab sebelumnya. Desain ini menggambarkan bagaimana modul deteksi aktivitas mencurigakan diintegrasikan ke dalam alur kerja CCTV dan Building Management System (BMS) melalui kombinasi pemodelan machine learning dan rule-based.
+Bab ini menjelaskan rancangan konsep solusi yang diusulkan berdasarkan pendekatan yang telah dipilih pada Bab sebelumnya. Desain ini menggambarkan bagaimana modul deteksi aktivitas mencurigakan diintegrasikan ke dalam alur kerja CCTV dan \textit{Building Management System} (BMS) melalui kombinasi pemodelan \textit{machine learning} dan \textit{rule-based}.
 \section{Arsitektur Konsep Solusi}
-Arsitektur konsep solusi dirancang untuk mengintegrasikan modul deteksi aktivitas mencurigakan berbasis machine learning ke dalam alur kerja CCTV yang telah tersedia pada ITB Innovation Park. Arsitektur ini terdiri dari empat lapisan utama, yaitu perangkat akuisisi video, pemrosesan video, integrasi sistem, dan antarmuka pengguna.
+Arsitektur konsep solusi dirancang untuk mengintegrasikan modul deteksi aktivitas mencurigakan berbasis \textit{machine learning} ke dalam alur kerja CCTV yang telah tersedia pada ITB Innovation Park. Arsitektur ini terdiri dari empat lapisan utama, yaitu perangkat akuisisi video, pemrosesan video, integrasi sistem, dan antarmuka pengguna.
 
-Pada lapisan perangkat, terdapat kamera CCTV untuk menangkap  dan NVR/DVR berfungsi sebagai pengelola stream video yang kemudian diteruskan ke modul pemrosesan. Lapisan pemrosesan terdiri dari komponen Video Stream Handler, Machine Learning (menggunakan model YOLO), dan Activity Analysis. Pada komponen Activity Analysis, sistem mengekstraksi pola pergerakan dan interaksi objek untuk mengidentifikasi perilaku yang didefinisikan sebagai mencurigakan, seperti loitering, masuk ke area terbatas, atau membawa objek yang berpotensi berbahaya. Hasil pemrosesan kemudian diteruskan ke lapisan selanjutnya.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{image/arsitektur (2).png}
+\caption{Arsitektur Konsep Solusi}
+\label{fig:arsitektur}
+\end{figure}
 
-Lapisan selanjutnya adalah integrasi sistem, di mana hasil pendeteksian aktivitas mencurigakan dikirimkan ke Building Management System (BMS) melalui API. Terakhir, lapisan aplikasi menyediakan dashboard pemantauan real-time serta mekanisme notifikasi kepada operator keamanan.
+Pada lapisan perangkat, terdapat kamera CCTV untuk menangkap  dan NVR/DVR berfungsi sebagai pengelola \textit{stream} video yang kemudian diteruskan ke modul pemrosesan. Lapisan pemrosesan terdiri dari komponen \textit{Video Stream Handler}, \textit{Machine Learning} (menggunakan model YOLO), dan \textit{Activity Analysis}. Pada komponen \textit{Activity Analysis}, sistem mengekstraksi pola pergerakan dan interaksi objek untuk mengidentifikasi perilaku yang didefinisikan sebagai mencurigakan, seperti \textit{loitering}, masuk ke area terbatas, atau membawa objek yang berpotensi berbahaya. Hasil pemrosesan kemudian diteruskan ke lapisan selanjutnya.
+
+Lapisan selanjutnya adalah integrasi sistem, di mana hasil pendeteksian aktivitas mencurigakan dikirimkan ke \textit{Building Management System} (BMS) melalui API. Terakhir, lapisan aplikasi menyediakan \textit{dashboard} pemantauan \textit{real-time} serta mekanisme notifikasi kepada operator keamanan.
 \section{Pembuatan dan Penggunaan Model}
 \subsection{Alur Pembuatan}
-Model dibangun dengan pendekatan supervised learning menggunakan arsitektur object detection sebagai fondasi utama. Sistem memanfaatkan model YOLO untuk mendeteksi objek manusia dan perilaku dasar pada setiap frame video. Hasil deteksi kemudian digunakan sebagai input bagi modul activity analysis yang bertugas menafsirkan pola gerak dan interaksi objek.
+Model dibangun dengan pendekatan \textit{supervised learning} menggunakan arsitektur \textit{object detection} sebagai fondasi utama. Sistem memanfaatkan model YOLO untuk mendeteksi objek manusia dan perilaku dasar pada setiap \textit{frame} video. Hasil deteksi kemudian digunakan sebagai \textit{input} bagi modul \textit{activity analysis} yang bertugas menafsirkan pola gerak dan interaksi objek.
 
 Untuk keperluan penelitian ini, aktivitas mencurigakan didefinisikan sebagai perilaku yang menyimpang dari pola aktivitas normal area, antara lain:
 \begin{enumerate}[label=\alph*.]
-\item Loitering
+\item \textit{Loitering}
 \item Masuk area terbatas
 \item Gerakan agresif seperti berkelahi atau mendorong
 \item Membawa objek berbahaya
 \item Berlari di area yang seharusnya tenang
 \end{enumerate}
 
+Berikut ini adalah alur pembuatan model deteksi aktivitas mencurigakan yang diusulkan:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{image/alur pembuatan.png}
@@ -32,21 +40,21 @@ Untuk keperluan penelitian ini, aktivitas mencurigakan didefinisikan sebagai per
 
 Setiap aktivitas tersebut direpresentasikan dalam bentuk fitur yang diekstraksi dari video, seperti posisi objek, durasi keberadaan, perubahan kecepatan, atau jarak antar individu. Model kemudian mempelajari pola ini melalui data pelatihan dan menghasilkan klasifikasi "normal" atau "mencurigakan".
 
-Proses pembuatan model dimulai dengan mengumpulkan dan memberi anotasi pada data video yang memuat contoh aktivitas normal dan mencurigakan. Dari data tersebut, sistem mengekstraksi berbagai fitur seperti bounding box sebagai dasar pembelajaran model. Model kemudian dilatih menggunakan dataset berlabel agar mampu mengenali pola perilaku yang dianggap mencurigakan. Setelah itu dilakukan proses validasi dan tuning, termasuk pengaturan threshold deteksi dan evaluasi kinerja menggunakan metrik seperti precision, recall, dan F1-score. Tahap akhir berupa pengujian langsung pada rekaman CCTV ITB Innovation Park untuk memastikan bahwa model mampu berfungsi pada kondisi lingkungan nyata.
+Proses pembuatan model dimulai dengan mengumpulkan dan memberi anotasi pada data video yang memuat contoh aktivitas normal dan mencurigakan. Dari data tersebut, sistem mengekstraksi berbagai fitur seperti \textit{bounding box} sebagai dasar pembelajaran model. Model kemudian dilatih menggunakan \textit{dataset} berlabel agar mampu mengenali pola perilaku yang dianggap mencurigakan. Setelah itu dilakukan proses validasi dan \textit{tuning}, termasuk pengaturan \textit{threshold} deteksi dan evaluasi kinerja menggunakan metrik seperti \textit{precision}, \textit{recall}, dan \textit{F1-score}. Tahap akhir berupa pengujian langsung pada rekaman CCTV ITB Innovation Park untuk memastikan bahwa model mampu berfungsi pada kondisi lingkungan nyata.
 \subsection{Penggunaan Model}
-Setelah model mencapai performa yang memadai pada data uji, model diintegrasikan ke dalam pipeline pemrosesan video yang berjalan berdampingan dengan sistem CCTV yang sudah ada. Setiap alur video yang diterima dari NVR akan diproses melalui tiga tahapan:
+Setelah model mencapai performa yang memadai pada data uji, model diintegrasikan ke dalam \textit{pipeline} pemrosesan video yang berjalan berdampingan dengan sistem CCTV yang sudah ada. Setiap alur video yang diterima dari NVR akan diproses melalui tiga tahapan:
 \begin{enumerate}
-\item \textbf{Object Detection}
+\item \textbf{\textit{Object Detection}}
 
-Model mendeteksi manusia dan objek relevan pada setiap frame menggunakan YOLO. Output berupa bounding box, label objek, dan confidence score.
+Model mendeteksi manusia dan objek relevan pada setiap \textit{frame} menggunakan YOLO. \textit{Output} berupa \textit{bounding box}, label objek, dan \textit{confidence score}.
 
-\item \textbf{Activity Interpretation}
+\item \textbf{\textit{Activity Interpretation}}
 
-Sistem melacak pergerakan objek dari waktu ke waktu dan mengidentifikasi pola yang sesuai dengan kriteria aktivitas mencurigakan. Sebagai contoh, jika seseorang berada di area yang sama lebih dari batas durasi tertentu, sistem menandainya sebagai loitering.
+Sistem melacak pergerakan objek dari waktu ke waktu dan mengidentifikasi pola yang sesuai dengan kriteria aktivitas mencurigakan. Sebagai contoh, jika seseorang berada di area yang sama lebih dari batas durasi tertentu, sistem menandainya sebagai \textit{loitering}.
 
-\item \textbf{Decision Engine dan Pengiriman Alert}
+\item \textbf{\textit{Decision Engine} dan Pengiriman \textit{Alert}}
 
-Jika sebuah aktivitas memenuhi kriteria mencurigakan, sistem menghasilkan alert yang memuat jenis aktivitas, waktu kejadian, dan potongan frame (snapshot). Informasi ini dikirimkan melalui API ke BMS.
+Jika sebuah aktivitas memenuhi kriteria mencurigakan, sistem menghasilkan \textit{alert} yang memuat jenis aktivitas, waktu kejadian, dan potongan \textit{frame} (\textit{snapshot}). Informasi ini dikirimkan melalui API ke BMS.
 \end{enumerate}
 
 \section{Perbandingan}
@@ -58,8 +66,8 @@ Jika sebuah aktivitas memenuhi kriteria mencurigakan, sistem menghasilkan alert 
 \label{fig:alur_to_be}
 \end{figure}
 
-Pada sistem yang diusulkan, alur kerja dimulai dengan CCTV merekam video kemudian DVR atau NVR meneruskan stream video ke modul analitik yang telah terintegrasi dengan Building Management System (BMS). Modul ini secara otomatis menerima stream video dan menjalankan analisis menggunakan model deteksi objek dan aktivitas mencurigakan. Proses analitik berlangsung secara real-time, sehingga setiap aktivitas mencurigakan dapat teridentifikasi secara terus menerus. Ketika sebuah aktivitas dikategorikan sebagai mencurigakan, sistem langsung menghasilkan alert dan mengirimkannya ke dashboard BMS. Petugas keamanan hanya perlu memverifikasi notifikasi yang muncul dan menindaklanjuti kejadian tersebut.
+Pada sistem yang diusulkan, alur kerja dimulai dengan CCTV merekam video kemudian DVR atau NVR meneruskan \textit{stream} video ke modul analitik yang telah terintegrasi dengan \textit{Building Management System} (BMS). Modul ini secara otomatis menerima \textit{stream} video dan menjalankan analisis menggunakan model deteksi objek dan aktivitas mencurigakan. Proses analitik berlangsung secara \textit{real-time}, sehingga setiap aktivitas mencurigakan dapat teridentifikasi secara terus menerus. Ketika sebuah aktivitas dikategorikan sebagai mencurigakan, sistem langsung menghasilkan \textit{alert} dan mengirimkannya ke \textit{dashboard} BMS. Petugas keamanan hanya perlu memverifikasi notifikasi yang muncul dan menindaklanjuti kejadian tersebut.
 
-Kondisi ini berbeda dengan proses as-is yang berjalan saat ini, di mana observasi diserahkan sepenuhnya kepada petugas keamanan. CCTV hanya berfungsi sebagai perangkat pengambil gambar, sedangkan DVR atau NVR sebatas menyimpan dan menampilkan video ke monitor. Petugas harus mengamati banyak layar secara terus-menerus untuk mengenali potensi ancaman. Ketergantungan pada kemampuan manusia dalam memantau video secara terus menerus membuat risiko terjadinya kelalaian cukup tinggi. Tidak adanya pendeteksi otomatis menyebabkan efisiensi pengawasan bergantung sepenuhnya pada konsentrasi petugas.
+Kondisi ini berbeda dengan proses \textit{as-is} yang berjalan saat ini, di mana observasi diserahkan sepenuhnya kepada petugas keamanan. CCTV hanya berfungsi sebagai perangkat pengambil gambar, sedangkan DVR atau NVR sebatas menyimpan dan menampilkan video ke monitor. Petugas harus mengamati banyak layar secara terus-menerus untuk mengenali potensi ancaman. Ketergantungan pada kemampuan manusia dalam memantau video secara terus menerus membuat risiko terjadinya kelalaian cukup tinggi. Tidak adanya pendeteksi otomatis menyebabkan efisiensi pengawasan bergantung sepenuhnya pada konsentrasi petugas.
 
-Berdasarkan perbandingan tersebut, sistem usulan menawarkan peningkatan dalam membantu petugas keamanan mendeteksi aktivitas mencurigakan dengan menghadirkan pendekatan pengawasan yang lebih adaptif dibandingkan sistem as-is yang bersifat pasif dan reaktif. 
+Berdasarkan perbandingan tersebut, sistem usulan menawarkan peningkatan dalam membantu petugas keamanan mendeteksi aktivitas mencurigakan dengan menghadirkan pendekatan pengawasan yang lebih adaptif dibandingkan sistem \textit{as-is} yang bersifat pasif dan reaktif. 

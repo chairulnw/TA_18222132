@@ -5,6 +5,126 @@
 \label{chap:rencana-selanjutnya}
 
 \section{Rencana Implementasi}
-<inserttable>
+\subsection{Lini Masa}
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{2.7pt}
+
+\begin{longtable}{|p{0.30\textwidth}|*{16}{>{\centering\arraybackslash}p{0.028\textwidth}|}}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\caption{Lini Masa Rencana Implementasi}
+\label{tbl:timeline} \\
+
+\hline
+\multirow{2}{*}{\textbf{Aktivitas}} & \multicolumn{4}{c|}{\textbf{Februari}} & \multicolumn{4}{c|}{\textbf{Maret}} & \multicolumn{4}{c|}{\textbf{April}} & \multicolumn{4}{c|}{\textbf{Mei}} \\ \cline{2-17}
+& \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\ \hline
+\endhead
+
+\hline
+\endlastfoot
+
+Observasi, wawancara pengguna & \cellcolor{blue!30} & \cellcolor{blue!30} & & & & & & & & & & & & & & \\ \hline
+
+Rumusan masalah \& kebutuhan & & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & & & & & & & & & & & & \\ \hline
+
+Desain konsep \& arsitektur & & & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & & & & & & & & & & & \\ \hline
+
+Pengembangan model \& integrasi & & & & & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & & & & & & \\ \hline
+
+Pengujian \& evaluasi & & & & & & & & & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & & & \\ \hline
+
+Melakukan iterasi dan finalisasi & & & & & & & & & & & & & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} & \cellcolor{blue!30} \\ \hline
+
+\end{longtable}
+
+Pengerjaan dimulai pada Februari dengan kegiatan observasi dan wawancara untuk memahami kebutuhan pengguna, kemudian dilanjutkan dengan perumusan masalah dan penyusunan kebutuhan sistem. Pada pertengahan Februari hingga Maret dilakukan perancangan konsep dan arsitektur solusi, yang menjadi dasar pengembangan model dan integrasi sistem pada akhir Maret hingga April. Memasuki April dan awal Mei, sistem diuji dan dievaluasi untuk memastikan performa model serta kesesuaian integrasi dengan BMS. Tahap akhir berupa iterasi dan finalisasi dilakukan pada pertengahan hingga akhir Mei.
+\subsection{Alat dan Bahan}
+Rincian alat dan bahan yang digunakan pada pengembangan sistem ini disajikan pada tabel berikut.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{8pt}
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.65\textwidth}|}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\caption{Alat dan Bahan}
+\label{tbl:alat_bahan} \\
+
+\hline
+\textbf{Kategori} & \textbf{Alat / Bahan} \\ \hline
+\endhead
+
+\hline
+\endlastfoot
+
+Komputasi & Google Colab \\ \hline
+
+Anotasi & Roboflow \\ \hline
+
+Model \& \textit{Processing} & YOLO, Python, OpenCV \\ \hline
+
+\textit{Dataset} & Rekaman CCTV ITB Innovation Park, \textit{Dataset} publik UCF-Crime \\ \hline
+
+\end{longtable}
+
 \section{Desain Pengujian dan Evaluasi}
+Untuk mengukur performa sistem deteksi yang dikembangkan, digunakan beberapa metrik evaluasi standar dalam domain \textit{computer vision}. Rincian metrik tersebut disajikan pada tabel berikut.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{8pt}
+
+\begin{longtable}{|p{0.20\textwidth}|p{0.70\textwidth}|}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\caption{Metrik Evaluasi}
+\label{tbl:metrik_evaluasi} \\
+
+\hline
+\textbf{Metrik} & \textbf{Penjelasan Singkat} \\ \hline
+\endhead
+
+\hline
+\endlastfoot
+
+\textit{Confusion Matrix} & Menunjukkan jumlah prediksi benar dan salah untuk setiap kelas sehingga pola kesalahan model dapat terlihat jelas. \\ \hline
+
+\textit{Precision} & Mengukur ketepatan model dalam memprediksi kelas positif, terutama untuk menilai seberapa sering model menghasilkan \textit{false positive}. \\ \hline
+
+\textit{Recall} & Mengukur kemampuan model mendeteksi seluruh kejadian positif dan melihat risiko \textit{false negative}. \\ \hline
+
+\textit{F1 Score} & Kombinasi \textit{precision} dan \textit{recall} yang menunjukkan keseimbangan performa model. \\ \hline
+
+mAP & Ukuran utama dalam deteksi objek yang merangkum akurasi deteksi berdasarkan kurva \textit{precision-recall}. \\ \hline
+
+\end{longtable}
+
 \section{Analisis Risiko dan Mitigasi}
+Selain evaluasi performa model, penelitian ini juga mengidentifikasi sejumlah risiko yang dapat muncul selama proses pengembangan sistem deteksi. Risiko-risiko tersebut beserta strategi mitigasinya dijelaskan sebagai berikut.
+\begin{enumerate}
+\item \textbf{Risiko Kualitas Data CCTV Rendah}
+
+Rekaman CCTV mungkin memiliki pencahayaan buruk, sudut kamera kurang ideal, noise tinggi, atau objek yang tertutup, sehingga menurunkan akurasi deteksi objek dan aktivitas.
+
+\textbf{Mitigasi:} melakukan pengambilan data pada berbagai kondisi menggunakan augmentasi di Roboflow (\textit{brightness}, \textit{blur}, \textit{noise}, \textit{rotation}).
+
+\item \textbf{Risiko \textit{False Positive} dan \textit{False Negative}}
+
+Model dapat salah mendeteksi aktivitas mencurigakan (\textit{false positive}) atau gagal mengenalinya (\textit{false negative}), yang dapat mengurangi keandalan sistem.
+
+\textbf{Mitigasi:} melakukan \textit{tuning threshold confidence} dan IoU, menganalisis \textit{error} menggunakan \textit{confusion matrix}, menambah sampel pada kelas-kelas yang sering salah terdeteksi, serta memperbaiki anotasi yang kurang konsisten.
+
+\item \textbf{Risiko Keterbatasan Komputasi \textit{Cloud} (\textit{Runtime} Colab/Kaggle)}
+
+Google Colab atau Kaggle dapat memutus sesi saat \textit{training} berlangsung, atau membatasi \textit{runtime} GPU sehingga proses pelatihan tidak selesai.
+
+\textbf{Mitigasi:} menyimpan \textit{checkpoint} model secara berkala ke Google Drive, membagi proses \textit{training} menjadi beberapa tahap, serta menggunakan Colab Pro jika dibutuhkan kestabilan akses GPU yang lebih tinggi.
+
+\item \textbf{Risiko Latensi Tinggi pada Inferensi Video}
+
+Model yang terlalu besar atau \textit{pipeline} yang kurang optimal dapat menyebabkan inferensi video berjalan lambat sehingga tidak responsif.
+
+\textbf{Mitigasi:} menggunakan model ringan seperti YOLOv8n/YOLOv8, mengoptimalkan \textit{preprocessing}, serta menurunkan resolusi \textit{input} jika tidak mempengaruhi akurasi secara signifikan.
+
+\item \textbf{Risiko Keamanan dan Privasi Data CCTV}
+
+Rekaman CCTV bersifat sensitif dan berpotensi menimbulkan pelanggaran privasi apabila tidak dikelola dengan benar.
+
+\textbf{Mitigasi:} menyimpan data hanya pada layanan \textit{cloud} dengan akses terbatas, memastikan \textit{dataset} di Roboflow menggunakan mode \textit{private}, memberikan akses hanya kepada pihak yang berwenang, serta tidak mendistribusikan cuplikan video di luar kebutuhan penelitian.
+\end{enumerate}
