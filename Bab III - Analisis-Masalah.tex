@@ -7,18 +7,178 @@
 \chapter{ANALISIS MASALAH}
 \label{chap:analisis-masalah}
 \section{Analisis Kondisi Saat Ini}
-Menurut \textcite{laudon2020}, gambarkan terlebih dahulu model konseptual sistem yang ada saat ini. Model konseptual ini berisi berbagai komponen atau subsitem dan interaksi antarsubsistem tersebut. Setelah itu, berikan penjelasan tentang masalah yang ada pada sistem tersebut. Paragraf berikut berisi contoh penjabaran masalah sistem informasi fasilitas kesehatan untuk pasien \autocite{pressman2019}. 
-\section{Analisis Kebutuhan}
-\lipsum[4]
-\subsection{Identifikasi Masalah Pengguna}
-\lipsum[5]
-\subsection{Kebutuhan Fungsional}
-\lipsum[6]
-\subsection{Kebutuhan Nonfungsional}
-\lipsum[7]
+Kondisi keamanan di ITB Innovation Park saat ini masih hanya bergantung pada petugas keamanan yang berjaga selama 24 jam dengan sistem pergantian shift, tanpa adanya sistem access control untuk membatasi akses keluar masuk area. Infrastruktur pemantauan yang tersedia pada lantai 9 berupa delapan kamera CCTV konvensional yang terpasang di sepanjang koridor lantai 9 dan tidak mencakup area di dalam ruangan, sehingga cakupan pengawasannya terbatas.
 
+Proses pemantauan rekaman CCTV dilakukan secara manual melalui layar monitor oleh petugas keamanan, di mana kamera hanya berfungsi sebagai perangkat perekam tanpa kemampuan analitik, deteksi otomatis, ataupun sistem peringatan dini. Dari sisi operasional, petugas yang memperhatikan delapan tampilan kamera secara simultan dalam durasi yang panjang, secara manusiawi berpotensi melewatkan kejadian penting akibat kelelahan dan penurunan fokus. Kondisi ini sistem keamanan yang seperti ini berpotensi tidak terdeteksinya kegiatan yang merugikan.
+
+Berdasarkan wawancara dengan penghuni lantai 9, terdapat kekhawatiran terhadap keamanan barang-barang berharga seperti laptop dan perangkat elektronik lainnya, sehingga muncul kebutuhan agar sistem keamanan mampu memberikan deteksi dini terhadap potensi pencurian. Namun, sistem CCTV saat ini tidak memiliki fitur analitik yang dapat secara otomatis menandai pola perilaku mencurigakan.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{image/Proses Bisnis as-is.png}
+\caption{Proses Bisnis Sistem Pengawasan Saat Ini (As-Is)}
+\label{fig:proses_bisnis_as_is}
+\end{figure}
+
+Diagram pada Gambar 3.1 menggambarkan alur kerja sistem pengawasan yang saat ini diterapkan di ITB Innovation Park. Sistem ini terdiri dari beberapa komponen utama, yaitu kamera CCTV, perangkat DVR/NVR, monitor, dan petugas keamanan.
+
+Pertama, kamera CCTV yang terpasang di sepanjang lorong merekam aktivitas secara terus menerus dan mengirimkan video ke perangkat DVR/NVR. Perangkat tersebut berfungsi sebagai penyimpan rekaman sekaligus penghubung yang meneruskan tampilan video ke monitor di ruang keamanan.
+
+Video yang ditampilkan pada monitor kemudian diamati oleh petugas keamanan. Proses ini dilakukan dengan cara memantau secara manual dan bergantung pada tingkat kewaspadaan serta konsentrasi petugas. Identifikasi suatu aktivitas yang dianggap tidak biasa sepenuhnya ditentukan oleh persepsi petugas terhadap tampilan video yang berlangsung. Tidak terdapat sistem peringatan otomatis yang dapat membantu menyoroti potensi kejadian tertentu.
+
+Apabila petugas mencurigai adanya aktivitas yang tidak wajar, petugas akan menindaklanjuti secara manual, seperti mendatangi lokasi kejadian. Seluruh proses respons dilakukan tanpa dukungan sistem pendeteksi atau pencatat kejadian otomatis.
+
+Berdasarkan diagram tersebut, dapat disimpulkan bahwa alur pengawasan bersifat linear dan sepenuhnya manual. Seluruh proses mulai dari pemantauan, identifikasi aktivitas, hingga tindakan lanjutan bergantung pada kemampuan dan perhatian petugas. Kondisi ini menunjukkan belum adanya dukungan teknologi yang dapat membantu mengurangi beban pengawasan, meningkatkan konsistensi pemantauan, atau mempercepat deteksi aktivitas mencurigakan
+
+% Menurut \textcite{laudon2020}, gambarkan terlebih dahulu model konseptual sistem yang ada saat ini. Model konseptual ini berisi berbagai komponen atau subsitem dan interaksi antarsubsistem tersebut. Setelah itu, berikan penjelasan tentang masalah yang ada pada sistem tersebut. Paragraf berikut berisi contoh penjabaran masalah sistem informasi fasilitas kesehatan untuk pasien \autocite{pressman2019}. 
+\section{Analisis Kebutuhan}
+Berdasarkan kondisi pengawasan yang telah dijelaskan sebelumnya, terdapat beberapa kesenjangan antara kebutuhan keamanan gedung dan kemampuan sistem yang tersedia saat ini. Kesenjangan utama terletak pada tidak adanya mekanisme analitik yang mampu membantu petugas dalam mengidentifikasi aktivitas yang berpotensi mencurigakan. Seluruh proses pemantauan dan pengenalan kejadian masih sepenuhnya bergantung pada pengamatan visual manusia, sehingga efektivitasnya dipengaruhi oleh faktor kelelahan, keterbatasan atensi, dan kemampuan individu. Situasi ini membuat potensi aktivitas tertentu tidak terdeteksi secara konsisten, terutama ketika beberapa tampilan kamera harus diamati secara simultan.
+
+Selain ketiadaan kemampuan analisis otomatis, sistem saat ini juga tidak dilengkapi dengan fitur peringatan dini yang dapat menyoroti aktivitas tertentu sebelum berkembang menjadi insiden. Padahal, pola perilaku seperti keberadaan seseorang dalam durasi lama, pergerakan berulang pada satu area, atau aktivitas di luar jam operasional merupakan indikator umum dari perilaku mencurigakan yang seharusnya dapat dideteksi lebih awal. Tanpa mekanisme yang menandai pola tersebut, petugas hanya dapat bertindak setelah aktivitas teramati secara jelas, sehingga respons lebih bersifat reaktif.
+
+\subsection{Identifikasi Masalah Pengguna}
+Adapun pengguna sistem ini adalah petugas keamanan, pengelola gedung, dan penghuni lantai 9 ITB Innovation Park. Ketiga kelompok ini berinteraksi dengan lingkungan gedung dan memiliki kebutuhan yang berbeda terkait keamanan. Masalah yang dihadapi oleh masing-masing kelompok pengguna adalah sebagai berikut:
+
+\begin{enumerate}
+\item	Petugas keamanan
+
+Petugas harus memantau banyak kamera CCTV secara terus menerus dalam durasi panjang sehingga berisiko mengalami kehilangan fokus dan terlewatkan kejadian penting
+
+\item	Pengelola gedung
+
+Pengelola gedung tidak memiliki dokumentasi aktivitas keamanan yang terpusat, sehingga evaluasi rutin terhadap potensi risiko atau kejadian tertentu menjadi sulit dilakukan. Minimnya data terstruktur juga menghambat proses investigasi apabila terjadi laporan kehilangan atau insiden
+
+\item	Pengguna gedung
+
+Penghuni merasa khawatir atas keamanan barang-barang berharga seperti laptop karena tidak adanya sistem keamanan lain selain mengandalkan petugas kemanan dan tidak adanya sistem yang dapat memberi deteksi dini terhadap aktivitas mencurigakan di lingkungan mereka untuk mencegah hal yang merugikan.
+Untuk mengatasi permasalahan tersebut, perlu dirumuskan kebutuhan fungsional dan nonfungsional yang dapat memenuhi kebutuhan ketiga kelompok pengguna. Subbab selanjutnya menjelaskan kebutuhan tersebut secara lebih rinci
+\end{enumerate}
+\subsection{Kebutuhan Fungsional}
+Kebutuhan fungsional menggambarkan fitur dan kemampuan yang harus dimiliki oleh sistem yang dirancang untuk menyelesaikan permasalahan yang telah diidentifikasi. Kebutuhan ini mencakup kemampuan sistem dalam menerima data, melakukan analisis perilaku, menampilkan hasil, serta mendukung proses pemantauan oleh petugas keamanan. Tabel berikut merangkum kebutuhan fungsional dari modul deteksi aktivitas mencurigakan yang akan dikembangkan
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|p{0.12\textwidth}|p{0.28\textwidth}|p{0.46\textwidth}|}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\caption{Kebutuhan Fungsional}
+\label{tbl:kebutuhan_fungsional} \\
+
+\hline
+\textbf{Kode} & \textbf{Kebutuhan Fungsional} & \textbf{Deskripsi} \\ \hline
+\endhead
+
+\hline
+\endlastfoot
+
+FR-01 & Input video & Sistem harus mampu menerima input berupa rekaman dari kamera CCTV yang telah terpasang pada ITB Innovation Park. \\ \hline
+
+FR-02 & Deteksi perilaku & Sistem harus mampu melakukan analisis terhadap video untuk mengenali pola aktivitas yang dikategorikan sebagai aktivitas mencurigakan. \\ \hline
+
+FR-03 & Visualisasi deteksi & Sistem harus mampu menampilkan hasil deteksi melalui dashboard dalam bentuk visualisasi sederhana yang mudah dipahami petugas. \\ \hline
+
+FR-04 & Pencatatan Aktivitas & Sistem harus dapat mencatat dan menyimpan aktivitas yang terdeteksi dalam bentuk log agar dapat ditinjau kembali. \\ \hline
+
+FR-05 & Notifikasi peringatan & Sistem harus dapat memberikan notifikasi sederhana kepada petugas ketika terdeteksi aktivitas yang memerlukan perhatian. \\ \hline
+
+FR-06 & Akses Dashboard oleh Petugas & Sistem harus menyediakan dashboard yang dapat diakses oleh petugas keamanan untuk memantau hasil analitik secara real-time. \\ \hline
+
+\end{longtable}
+Dengan ini, diharapkan sistem yang dikembangkan mampu melakukan analisis terhadap rekaman CCTV dan mendeteksi pola perilaku yang dikategorikan sebagai aktivitas mencurigakan secara otomatis. Sistem juga diharapkan dapat menampilkan hasil deteksi melalui dashboard yang mudah dipahami, serta menyediakan pencatatan aktivitas dalam bentuk log untuk mendukung proses pelacakan dan evaluasi oleh petugas keamanan. Selain itu, kemampuan memberikan notifikasi sederhana diharapkan dapat membantu mengarahkan perhatian petugas terhadap kejadian tertentu sehingga proses pengawasan dapat berjalan lebih mudah
+\subsection{Kebutuhan Nonfungsional}
+Kebutuhan non-fungsional menjelaskan karakteristik kualitas yang harus dimiliki oleh sistem agar dapat berjalan secara optimal dan dapat digunakan secara efektif oleh petugas keamanan. Kebutuhan ini mencakup aspek kinerja, kemudahan penggunaan, keamanan data, serta keandalan deteksi yang dihasilkan. Tabel berikut merangkum kebutuhan non-fungsional tersebut.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|p{0.12\textwidth}|p{0.28\textwidth}|p{0.46\textwidth}|}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\caption{Kebutuhan Nonfungsional}
+\label{tbl:kebutuhan_nonfungsional} \\
+
+\hline
+\textbf{Kode} & \textbf{Kebutuhan Nonfungsional} & \textbf{Deskripsi} \\ \hline
+\endhead
+
+\hline
+\endlastfoot
+
+NFR-01 & Ketersediaan sistem & Sistem harus memiliki uptime minimal 99,5\% per bulan selama operasi 24 jam. \\ \hline
+
+NFR-02 & Waktu respon deteksi & Latency antara kejadian terekam kamera dan alert muncul di dashboard tidak boleh lebih dari 5 detik untuk 95\% kasus. \\ \hline
+
+NFR-03 & Performa pemrosesan & Sistem harus mampu memproses stream dari 8 kamera secara paralel dengan penggunaan CPU di bawah 80\%. \\ \hline
+
+NFR-04 & Akurasi deteksi & Sistem harus mencapai minimal 85\% detection rate terhadap skenario aktivitas mencurigakan terdefinisi, dengan false positive rate tidak lebih dari 10\% dari total alert harian. \\ \hline
+
+NFR-05 & Keamanan data video & Akses dashboard dibatasi dengan autentikasi dan role-based access control, dan hanya metadata penting (ID kamera, jenis event, timestamp) yang disimpan dalam database. \\ \hline
+
+NFR-06 & Kemudahan penggunaan & Dashboard harus memiliki tampilan yang sederhana, dengan tata letak elemen yang jelas dan mudah dipahami oleh petugas keamanan. \\ \hline
+
+\end{longtable}
+
+Dengan kebutuhan non-fungsional tersebut, sistem diharapkan dapat memberikan pemantauan yang stabil, cepat, dan aman, sekaligus menjaga akurasi serta efisien
 \section{Analisis Pemilihan Solusi}
+Sebelum menentukan pendekatan yang digunakan, diperlukan analisis terhadap beberapa alternatif metode analisis yang dapat digunakan untuk mengidentifikasi aktivitas pada video CCTV. Pemilihan metode ini penting karena setiap pendekatan memiliki kelebihan dan kekurangnnya masing-masing. Oleh karena itu, subbab berikut membahas alternatif solusi serta dasar penentuan solusi terbaik.
 \subsection{Alternatif Solusi}
-\lipsum[8]
+Dalam merancang modul deteksi aktivitas mencurigakan, diperlukan pemilihan metode analisis video yang mampu mengenali perilaku tidak wajar. Berikut beberapa alternatif solusi yang dapat dipertimbangkan untuk mendeteksi aktivitas mencurigakan pada area yang dipantau CCTV
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|p{0.28\textwidth}|p{0.32\textwidth}|p{0.26\textwidth}|}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\caption{Alternatif Solusi}
+\label{tbl:alternatif_solusi} \\
+
+\hline
+\textbf{Metode} & \textbf{Kelebihan} & \textbf{Kelemahan} \\ \hline
+\endhead
+
+\hline
+\endlastfoot
+
+Rule-based video analytics & Bekerja dengan cepat karena ringan secara komputasi, mudah diterapkan & Tidak mampu memahami konteks perilaku, tidak cocok untuk aktivitas kompleks \\ \hline
+
+Model ML single object detection & Mampu mengenali keberadaan orang, kendaraan, atau objek berbahaya & Tidak dapat memahami hubungan antar gerakan \\ \hline
+
+Machine Learning Multi-event Recognition & Dapat mengenali berbagai jenis aktivitas mencurigakan berbasis pola gerakan, lebih robust untuk perilaku kompleks & Membutuhkan dataset lebih besar, komputasi lebih tinggi, model lebih kompleks \\ \hline
+
+Pendekatan Hybrid (Rule-based + ML) & Mengurangi false alarm, dapat memahami konteks perilaku & Membutuhkan integrasi pipeline yang lebih rumit, membutuhkan tuning parameter lebih teliti \\ \hline
+
+\end{longtable}
 \subsection{Analisis Penentuan Solusi}
-\lipsum[9]
+Dalam menentukan pendekatan terbaik, penelitian ini menggunakan metode Weighted Scoring Matrix (WSM). WSM merupakan teknik pengambilan keputusan yang membandingkan beberapa alternatif solusi berdasarkan sejumlah parameter yang diberi bobot sesuai tingkat kepentingannya. Metode ini dipilih karena sederhana dan cocok untuk mengambil keputusan yang mengharuskan mempertimbangkan banyak faktor.
+
+Parameter yang digunakan pada WSM meliputi Akurasi, yang menilai sejauh mana setiap pendekatan mampu mengenali aktivitas mencurigakan dengan benar. Efisiensi digunakan untuk menilai seberapa optimal penggunaan komputasi pada masing-masing pendekatan. Kemudahan Implementasi dievaluasi berdasarkan tingkat kompleksitas integrasi solusi ke dalam lingkungan sistem yang sudah ada. Terakhir, Skalabilitas mencerminkan kemampuan pendekatan untuk diterapkan pada banyak kamera tanpa memerlukan perubahan besar pada konfigurasi atau pipeline proses. Hasil skor masing-masing pendekatan pada tiap parameter dapat dilihat pada tabel berikut.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|p{0.23\textwidth}|p{0.135\textwidth}|p{0.135\textwidth}|p{0.165\textwidth}|p{0.165\textwidth}|}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\caption{Weighted Scoring Matrix}
+\label{tbl:weighted_scoring_matrix} \\
+
+\hline
+\textbf{Parameter} & \textbf{Rule-based} & \textbf{ML Deteksi Objek} & \textbf{ML Multi-event Recognition} & \textbf{Hybrid (Rule-based + ML)} \\ \hline
+\endhead
+
+\hline
+\endlastfoot
+
+Akurasi (0.35) & 2 & 2 & 4 & 4 \\ \hline
+
+Efisiensi (0.25) & 5 & 4 & 3 & 3 \\ \hline
+
+Kemudahan Implementasi (0.25) & 4 & 4 & 3 & 4 \\ \hline
+
+Skalabilitas (0.15) & 3 & 4 & 4 & 3 \\ \hline
+
+\textbf{Total} & \textbf{3.4} & \textbf{3.05} & \textbf{3.5} & \textbf{3.6} \\ \hline
+
+\end{longtable}
+
+Setiap pendekatan diberi skor pada rentang 1 hingga 5, di mana nilai 1 menunjukkan kemampuan terendah dan nilai 5 menunjukkan kemampuan paling memenuhi kebutuhan parameter. Skor tersebut ditentukan secara kualitatif berdasarkan pemahaman teknis penulis terhadap karakteristik masing-masing pendekatan. Selanjutnya, skor dikalikan dengan bobot setiap parameter yang ditetapkan sesuai kebutuhan sistem di lapangan.
+
+Berdasarkan hasil perhitungan pada tabel, pendekatan Hybrid (Rule-based + ML) memperoleh skor total tertinggi yaitu 3.60. Pendekatan ini dinilai paling seimbang karena mampu memberikan akurasi yang lebih baik dibanding rule-based, namun tetap mempertahankan efisiensi komputasi, kemudahan implementasi, dan skalabilitas yang tidak terlalu rumit.

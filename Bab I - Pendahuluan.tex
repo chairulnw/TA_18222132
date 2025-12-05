@@ -5,34 +5,71 @@
 \label{chap:pendahuluan}
 % --- Latar Belakang ---
 \section{Latar Belakang}
-Latar Belakang menjelaskan dasar pemikiran, motivasi, kebutuhan, alasan, atau urgensi pemilihan masalah tugas akhir. Subbab ini berisi penjelasan ringkas tentang kondisi atau situasi yang ada saat ini terkait dengan topik yang dibahas. Tujuan utamanya adalah untuk memberikan informasi secukupnya kepada pembaca agar memahami topik yang akan dibahas. Dalam subbab ini, jelaskan hal-hal berikut ini:
-\begin{enumerate}
-\item	Kondisi atau situasi topik yang dibahas beserta permasalahannya, misalnya tentang pengelolaan informasi di puskesmas daerah pedesaan dan masalah yang dihadapi.
-\item	Berbagai solusi yang telah diterapkan atau solusi yang tersedia dan memungkinkan untuk diterapkan untuk menyelesaikan masalah tersebut.
-\end{enumerate}
+Building Management System (BMS) merupakan sistem terpadu yang berfungsi memantau dan mengendalikan berbagai subsistem gedung, seperti kelistrikan, ventilasi, pencahayaan, hingga keamanan, dengan tujuan meningkatkan efisiensi operasional dan kualitas layanan gedung. Melalui BMS, data dari beragam perangkat dan sensor dikumpulkan dalam satu platform sehingga pengelola gedung dapat memantau kondisi secara real-time, mengambil keputusan berbasis data, dan melakukan tindakan korektif dengan lebih cepat.
+
+Secara regulasi, Permen PUPR No. 10 Tahun 2023 tentang Bangunan Gedung Cerdas mendorong pengelola gedung untuk mengimplementasikan sistem manajemen yang terintegrasi, adaptif, dan memanfaatkan teknologi digital untuk mendukung operasi, termasuk aspek pemantauan dan keamanan. Regulasi tersebut menegaskan bahwa bangunan gedung cerdas diharapkan mengintegrasikan berbagai subsistem, menyediakan pemantauan terpusat, serta memungkinkan respons yang lebih cepat dan terukur terhadap kondisi lingkungan gedung.
+
+Salah satu aspek penting pada sistem tersebut adalah aspek keamanan karena di dalam gedung terdapat jumlah orang yang tinggi serta menyimpan aset bernilai, sehingga kejadian seperti kehilangan barang, akses tidak sah, atau gangguan aktivitas dapat menimbulkan kerugian material maupun mengganggu operasional. Sistem keamanan sendiri tidak hanya terdiri dari CCTV, tetapi juga mencakup access control, prosedur patroli, alarm, dan sistem keselamatan lain. Namun, CCTV menjadi salah satu komponen yang paling kaya informasi karena merekam perilaku dan pergerakan di area gedung.
+
+Komponen CCTV umumnya hanya merekam dan menampilkan video ke ruang kendali dengan petugas keamanan harus mengamati beberapa tampilan dalam waktu lama untuk mendeteksi kejadian penting. Pendekatan ini memiliki keterbatasan karena kapasitas perhatian manusia terbatas, terlebih ketika jumlah kamera bertambah dan durasi pemantauan panjang, sehingga aktivitas yang berpotensi merugikan dapat terlewat atau terlambat disadari. Keterbatasan tersebut menimbulkan kebutuhan akan sistem yang dapat membantu mengidentifikasi aktivitas tertentu secara otomatis dan memberikan peringatan ke petugas sehingga proses pengawasan menjadi lebih konsisten.
+
+Perkembangan teknologi computer vision dan machine learning membuka peluang untuk menjadikan kamera pengawas sebagai sensor cerdas yang mampu menganalisis video untuk mendeteksi pola perilaku yang berpotensi menimbulkan kerugian. Melalui integrasi modul ini ke dalam BMS mengubah informasi dari CCTV dari sekadar rekaman visual menjadi sesuatu yang dapat mendeteksi aktivitas mencurigakan secara otomatis.
+
+Kebutuhan akan modul tersebut muncul di lingkungan ITB Innovation Park, yang saat ini aspek keamanannya masih lemah, masih sepenuhnya bergantung pada petugas keamanan serta CCTV biasa. Kondisi ini menjadi semakin krusial mengingat gedung tersebut berada di kawasan yang dikelilingi area ramai seperti masjid, mall, dan stadion sepak bola, sehingga mobilitas orang dari luar relatif tinggi. Oleh karena itu, diperlukan suatu Building Management System yang dapat mengintegrasikan hasil analisis aktivitas mencurigakan dan mendukung terhadap proses pengawasan keamanan secara efisien.
 
 % --- Rumusan Masalah ---
 \section{Rumusan Masalah}
-Rumusan Masalah berisi masalah utama yang dibahas dalam tugas akhir. Rumusan masalah yang baik memiliki struktur sebagai berikut:
+Berdasarkan latar belakang di atas, permasalahan yang muncul adalah belum adanya sistem yang dapat membantu proses pengawasan dengan melakukan analisis otomatis terhadap aktivitas yang terekam CCTV. Saat ini, pengawasan masih sepenuhnya mengandalkan petugas keamanan yang harus memantau dalam waktu lama, sementara jumlah kamera yang diawasi cukup banyak. Kondisi ini membuat beberapa aktivitas yang berpotensi mencurigakan dapat terlewatkan. Untuk mengatasi permasalahan tersebut, dirumuskan beberapa pertanyaan penelitian sebagai berikut:
 \begin{enumerate}
-\item	Pokok persoalan dari kondisi atau situasi yang ada saat ini. Dengan kata lain, jelaskan kelemahan atau kekurangan dari kondisi, situasi, atau solusi yang dijelaskan pada latar belakang. Ini merupakan pokok rumusan masalah.
-\item	Elaborasi lebih lanjut urgensi penyelesaian masalah tersebut (mengapa penting untuk diselesaikan dan akibat yang dapat terjadi jika tidak diselesaikan).
-\item	Usulan singkat terkait dengan solusi yang ditawarkan untuk menyelesaikan persoalan.
-Penting untuk diperhatikan bahwa persoalan yang dideskripsikan pada subbab ini akan dipertanggungjawabkan di bab Evaluasi (apakah terselesaikan atau tidak).
+\item	Bagaimana merancang sistem deteksi aktivitas mencurigakan berbasis computer vision yang mampu menganalisis video secara otomatis?
+\item	Bagaimana mendefinisikan pola perilaku yang dapat dikategorikan sebagai aktivitas mencurigakan?
+\item	Bagaimana merancang dashboard yang dapat menampilkan hasil analisis dan memberikan peringatan yang membantu petugas keamanan dalam proses pemantauan?
+\item   Bagaimana mengevaluasi performa dan efektivitas sistem yang dikembangkan ketika diterapkan?
 \end{enumerate}
 
 % --- Tujuan ---
 \section{Tujuan}
-Tuliskan tujuan utama dan/atau tujuan detail yang akan dicapai dalam pelaksanaan tugas akhir. Fokuskan pada hasil akhir yang ingin diperoleh setelah tugas akhir diselesaikan, terkait dengan penyelesaian persoalan pada rumusan masalah. Penting untuk diperhatikan bahwa tujuan yang dideskripsikan pada subbab ini akan dipertanggungjawabkan di akhir pelaksanaan tugas akhir apakah tercapai atau tidak. Tuliskan kriteria keberhasilan tugas akhir ini.
+Tujuan dari penelitian ini adalah merancang dan mengembangkan sebuah sistem yang dapat membantu proses pengawasan keamanan gedung melalui analisis video otomatis. Secara khusus, penelitian ini bertujuan untuk:
+\begin{enumerate}
+\item	Mengembangkan sistem deteksi aktivitas mencurigakan berbasis computer vision yang mampu melakukan analisis video secara otomatis sebagai pendukung pemantauan CCTV.
+\item	Menyusun definisi dan model pola perilaku yang dianggap mencurigakan
+\item	Merancang dashboard yang menampilkan hasil analitik dan memberikan peringatan sederhana yang dapat membantu petugas keamanan dalam memantau kondisi area secara lebih efisien
+\item   Melakukan evaluasi terhadap performa dan efektivitas sistem melalui pengujian pada kondisi nyata untuk melihat tingkat keandalan, keterbatasan, serta manfaat sistem dalam membantu proses pengawasan
+\end{enumerate}
 
 % --- Batasan Masalah ---
 \section{Batasan Masalah}
-Tuliskan batasan-batasan yang diambil dalam pelaksanaan tugas akhir. Batasan ini dapat dihindari (bersifat opsional, tidak perlu ada) jika topik atau judul tugas akhir dibuat cukup spesifik.
+Adapun beberapa batasan masalah yang diambil untuk memfokuskan ruang lingkup penelitian dalam pengerjaan tugas akhir ini meliputi:
+\begin{enumerate}
+\item	Penelitian hanya berfokus pada area koridor lantai 9 ITB Innovation Park
+\item	Sistem hanya memanfaatkan delapan kamera CCTV existing yang sudah terpasang pada lantai 9, tanpa melakukan pemasangan kamera tambahan
+\item   Deteksi aktivitas mencurigakan dibatasi pada pola perilaku yang telah ditentukan. Penelitian tidak mencakup identifikasi wajah, identifikasi individu, maupun analisis biometrik
+\item	Model yang dikembangkan hanya menganalisis perilaku berdasarkan informasi visual, tanpa menggabungkan data dari sensor lain
+\item	Sistem yang dibangun berfungsi sebagai alat bantu untuk mendukung tugas pengawasan, sehingga tidak menggantikan peran dari petugas keamanan
+\end{enumerate}
 
 % --- Metodologi Pengerjaan TA ---
 \section{Metodologi}
-Tuliskan semua tahapan yang akan dilalui selama pelaksanaan tugas akhir. Tahapan ini spesifik untuk menyelesaikan persoalan tugas akhir. Khusus untuk penyusunan proposal ini, jelaskan secara detail:
+Tugas akhir ini menggunakan pendekatan Design Thinking sebagai metodologi pengembangan sistem. Pendekatan ini dipilih karena memungkinkan untuk menemukan solusi terbaik sesuai kebutuhan pengguna. Dalam pekerjaan ini, Design Thinking direncanakan dilakukan dalam minimal dua iterasi agar sistem yang dikembangkan dapat dievaluasi dan diperbaiki
 \begin{enumerate}
-\item	Tahapan investigasi pengumpulan fakta di latar belakang untuk merumuskan masalah.
-\item	Langkah-langkah pencarian, pengelompokan, dan penapisan literatur atau sumber informasi untuk mengumpulkan informasi yang relevan tentang topik yang diangkat, termasuk teori (konsep atau teori apa saja yang perlu dicari), hal-hal yang telah dicapai oleh orang lain (cara mencari dan kata kuncinya), dan berbagai informasi pendukung, untuk mencari solusi terhadap masalah yang dibahas. Gunakan metodologi yang tepat dalam menggali informasi dan dokumentasikan prosesnya (termasuk rekaman wawancara atau survei) di dalam Lampiran, termasuk tautan ke video atau foto. Hasil penggalian informasi ini akan dijelaskan secara sistematis di Bab II Studi Literatur.
+\item	Empathize
+
+Tahap ini dilakukan untuk memahami kebutuhan dan kondisi lapangan melalui observasi pada area lantai 9 ITB Innovation Park dengan observasi langsung terhadap tata letak koridor, posisi kamera CCTV. Selain itu juga dilakukan wawancara dengan penghuni, petugas keamanan. Serta building management untuk mengetahui operasional gedung secara menyeluruh.
+
+\item	Define
+
+Dari informasi didapat pada tahap sebelumnya, dilakukan penentuan masalah yang perlu diselesaikan. Selanjutnya dilakukan identifikasi kebutuhan fungsional dan non-fungsional berdasarkan temuan sebelumnya Dari kebutuhan-kebutuhan tersebut dapat diidentifikasi spesifikasi sistem yang akan digunakan sebagai acuan dalam merancang dan mengevaluasi solusi.
+
+\item	Ideate
+
+Tahap ini berfokus pada eksplorasi pengembangan berbagai ide solusi yang dapat menjawab masalah dan memenuhi kebutuhan yang telah ditetapkan sebelumnya. Setelah ide terkumpul, dilakukan pemilihan solusi terbaik menggunakan beberapa pertimbangan seperti kelayakan teknis, kesesuaian dengan requirement, ketersediaan infrastruktur, dan efektivitas. Hasil pada tahap ini adalah konsep solusi untuk diwujudkan.
+
+\item	Prototype
+
+Pada tahap ini, konsep solusi diimplementasikan dalam bentuk prototipe awal. Prototipe dibuat dengan fokus pada fungsi inti agar dapat didemokan, namun tetap sederhana dan tidak mencakup seluruh fitur akhir. Komponen yang dikembangkan meliputi model deteksi aktivitas mencurigakan, alur pemrosesan video, serta tampilan dasar untuk menvisualisasikan hasil deteksi. Tujuan dari prototipe adalah menyediakan gambaran konkret mengenai cara kerja sistem.
+
+\item	Evaluate
+
+Pada tahap ini dilakukan demonstrasi pada prototipe yang telah dikembangkan sebelumnya. Dari prototipe tersebut dilakukan evaluasi untuk menilai apakah sistem bekerja sesuai spesifikasi, apakah deteksi perilaku berjalan dengan baik, dan apakah informasi yang dihasilkan bermanfaat bagi proses pemantauan. Jika ditemukan kekurangan, ketidaksesuaian, atau kebutuhan baru, proses kembali ke tahap Empathize untuk memulai iterasi berikutnya hingga sistem mencapai bentuk yang lebih sesuai dengan kebutuhan.
+
 \end{enumerate}

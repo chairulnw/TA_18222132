@@ -3,275 +3,71 @@
 % ==========================================
 \chapter{STUDI LITERATUR}
 \label{chap:studi-literatur}
-\section{Penulisan Gambar, Tabel, Rumus, dan Kode}
-\lipsum[1]
 
-\subsection{Gambar}
-Contoh gambar dapat dilihat pada Gambar \ref{gambar:jaringan}. Gambar dan judulnya diposisikan di tengah. Nomor gambar tidak diakhiri tanda titik. Gambar tersebut dibuat menggunakan aplikasi draw.io dan disimpan ke format PNG setelah dengan zoom setting pada angka 300\%. Ukuran gambar yang ditampilkan dapat diatur dengan mengubah nilai \textit{width} dalam sintaks \textit{includegraphics}.
+\section{Building Management System (BMS)}
+Building Management System (BMS) merupakan sistem terpusat yang mengintegrasikan pemantauan dan pengendalian berbagai subsistem gedung seperti HVAC, pencahayaan, energi, dan keamanan dalam satu platform untuk meningkatkan kenyamanan penghuni sekaligus efisiensi energi dan biaya operasional (Hussain dkk. 2025). 
 
-\begin{figure}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-	\centering
-  \captionsetup{justification=centering}
-    	\includegraphics[width=0.7\textwidth]{image/gambar1.png}
-	\caption{Contoh gambar jaringan}
-	\label{gambar:jaringan}
-\end{figure}
+Secara arsitektural, BMS umumnya dibangun dalam tiga lapisan, yaitu low layer yang terdiri atas perangkat seperti sensor, aktuator, dan kontroler. Kemudian ada middle layer yang berisi pengolah data dari perangkat low layer seperti Supervisory Control and Data Acquisition (SCADA) atau Direct Digital Control (DDC). Terakhir adalah top layer yang berisi tampilan penyajian dashboard, analitik, dan pelaporan, yang diolah dari middle layer (Domingues dkk. 2015). 
 
-Gambar umumnya tidak jelas atau kabur jika gambar tersebut:
-\begin{enumerate}[a.]
-  \item diperoleh dari hasil cropping pada suatu halaman buku atau situs web;
-  \item hasil pembesaran gambar yang gambar aslinya sebenarnya berukuran kecil; atau
-  \item disimpan dalam resolusi kecil
-\end{enumerate}
-Ketidakjelasan gambar ini dapat dilihat pada garis-garis diagram yang tidak tegas dan tulisan-tulisan dalam gambar yang tampak kabur dan kurang jelas terbaca.
+BMS sering diposisikan sebagai pondasi bangunan cerdas (smart building), karena integrasi teknologi informasi, sensor, dan otomasi yang memungkinkan gedung beroperasi secara efisien berdasarkan data real-time, sekaligus mengelola kinerja energi, kenyamanan, keamanan, dan keselamatan dalam satu kerangka manajemen terintegrasi (Eini dkk. 2022).
 
-Untuk mendapatkan gambar yang tidak kabur (\textit{blur}), langkah-langkah berikut dapat digunakan:
-\begin{enumerate}[(a)]
-\item Gambar yang didapat di suatu pustaka atau referensi sebaiknya digambar ulang, misalnya menggunakan PowerPoint, Canva, Figma, draw.io, atau yang lainnya.
-\item Jika diagram atau ilustrasi digambar menggunakan draw.io, saat gambar disimpan ke format PNG atau JPG (\textit{export as}), lakukan \textit{zoom} ke minimal 300\% (\textit{the default value is} 100\%). 
-\item Jika diagram digambar dengan menggunakan PowerPoint, gambar dapat langsung di-\textit{copy-paste} ke Word.
-\end{enumerate}
+Di Indonesia, Bangunan Gedung Cerdas diatur dalam Peraturan Menteri Pekerjaan Umum dan Perumahan Rakyat Nomor 10 Tahun 2023 yang menekankan bahwa bangunan cerdas harus memanfaatkan teknologi otomasi, sensor, dan sistem manajemen terintegrasi untuk mencapai efisiensi energi, keselamatan, kenyamanan, dan keberlanjutan. Regulasi tersebut menempatkan BMS sebagai komponen wajib dalam arsitektur bangunan cerdas karena fungsinya tersebut. Permen ini juga menegaskan bahwa BGC harus memiliki sistem manajemen keamanan dan keselamatan yang terhubung dengan platform pengelolaan gedung, sehingga memastikan kemampuan monitoring, respons, dan pengelolaan risiko yang lebih baik.
 
-\subsection{Tabel}
-Tabel ada dua jenis, yaitu tabel yang bisa termuat dalam satu halaman dan tabel yang sangat panjang sehingga tidak muat dalam satu halaman.
-\subsubsection{Tabel yang Muat dalam Satu Halaman}
-Contoh tabel dapat dilihat pada Tabel \ref{tbl:harga1} dan \ref{tbl:harga2}. Tabel dan judulnya dibuat rata kiri dan judul tabel diletakkan di atas tabel. Usahakan tabel dapat ditulis dalam satu halaman, tidak terpotong ke halaman berikutnya.
+\section{Sistem Keamanan Berbasis CCTV}
+Sistem kamera pengawas atau closed-circuit television (CCTV) merupakan bagian penting dari sistem keamanan dan keselamatan Bangunan Gedung. Sistem ini berfungsi merekam dan memantau aktivitas pada area-area tertentu melalui kamera yang dipasang secara strategis. Dengan pemantauan yang berlangsung terus-menerus, CCTV memungkinkan petugas keamanan untuk mengidentifikasi aktivitas mencurigakan dan mengambil tindakan secara cepat.
 
-\begin{table}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-  \begin{tabular}{ | p{2cm} | p{2cm} | p{3cm} |}
-	\hline
-	Nama 	& Satuan 		& Harga \\
-	\hline
-	Buku 	& Exemplar	& 25000 \\
-	Komputer	& Unit		& 2500000 \\
-	Pensil	& Buah		& 118900 \\
-	\hline
-	\end{tabular}
-\caption{Tabel harga bahan pokok}
-\label{tbl:harga1}
-\end{table}
+Menurut ketentuan paparan teknis Permen PUPR Nomor 10 Tahun 2023, sistem kamera pengawas terdiri atas tujuh komponen utama, yaitu kamera, stasiun pemantauan, perekam video, jaringan kabel atau router, perangkat penyimpanan rekaman, catu daya utama dan cadangan, serta sistem manajemen video. Kamera yang digunakan dapat berupa kamera IP atau kamera analog, dengan beragam bentuk seperti bullet, dome, dan pan-tilt-zoom (PTZ) yang dipilih sesuai kebutuhan pemantauan di area gedung.
 
-\begin{table}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-	\begin{tabular}{ | l | c | r | }
-	\hline
-	Nama 	& Satuan 		& Harga \\
-	\hline
-	Buku 	& Exemplar	& 25000 \\
-	Komputer	& Unit		& 2500000 \\
-	Pensil	& Buah		& 118900 \\
-	\hline
-	\end{tabular}
-\caption{Tabel harga bahan sekunder}
-\label{tbl:harga2}
-\end{table}
+Dalam konteks Bangunan Gedung Cerdas, CCTV bekerja secara terintegrasi dengan sistem keamanan lainnya seperti sistem kontrol akses dan sistem alarm. Integrasi ini menghasilkan mekanisme pengawasan yang lebih komprehensif dan responsif.
 
-\subsubsection{Tabel yang Sangat Panjang}
-Jika tabel terlalu panjang sehingga tidak muat dalam satu halaman, gunakan paket 
-\textit{longtable} untuk membuat tabel yang dapat terpotong ke halaman berikutnya, 
-seperti pada Tabel \ref{tbl:longtable1}.
+\section{Computer Vision}
+Computer vision merupakan cabang dari kecerdasan buatan yang berfokus pada bagaimana mesin dapat memahami data visual sehingga mampu mengekstrak informasi untuk pengambilan keputusan (Szeliski 2022). Bidang ini memiliki banyak aplikasinya seperti object detection, object tracking, pose estimation, dan masih banyak lagi.
 
-\begin{longtable}{@{\extracolsep{\fill}} l c r r}
-\caption{Comprehensive Data Table Example}\label{tbl:longtable1} \\
-\toprule
-\textbf{ID} & \textbf{Name} & \textbf{Score} & \textbf{Rank} \\
-\midrule
-\endfirsthead
+\subsection{Object Detection}
+Object detection merupakan metode untuk mengenali sekaligus menemukan keberadaan suatu objek pada video dan gambar digital (kumar 2024). Menurut Aslam (2020) terdapat dua tipe object detector, yaitu two-stage detector dan one-stage detector.
 
-\caption*{Comprehensive Data Table Example (lanjutan)} \\
-\toprule
-\textbf{ID} & \textbf{Name} & \textbf{Score} & \textbf{Rank} \\
-\midrule
-\endhead
+Pada two-stage detector, seperti Faster R-CNN, proses deteksi dilakukan dalam dua tahap, yaitu menghasilkan kandidat region proposal, kemudian mengklasifikasikan dan menyempurnakan bounding box pada tiap region tersebut. Pendekatan ini biasanya memberikan akurasi tinggi, tetapi memiliki kecepatan inferensi yang lebih lambat karena prosesnya yang bertingkat.
 
-\midrule
-\multicolumn{4}{r}{\textit{Bersambung ke halaman berikutnya}} \\
-\bottomrule
-\endfoot
+Sedangkan one-stage detector, seperti Single Shot MultiBox Detector (SSD) dan YOLO memproses seluruh gambar secara langsung tanpa tahap terpisah, sehingga klasifikasi dan regresi bounding box dilakukan dalam satu langkah terpadu. pendekatan ini memberikan hasil yang lebih cepat, meskipun akurasinya lebih rendah dibandingkan two-stage detector sehingga pendekatan ini lebih cocok untuk aplikasi real-time.
 
-\bottomrule
-\endlastfoot
+\subsection{Object Tracking}
+Object tracking merupakan proses yang bertujuan untuk menentukan posisi suatu objek secara konsisten di setiap frame dalam sebuah video (praveen 2023). Tujuan utamanya adalah membentuk lintasan (trajectory) pergerakan setiap objek sehingga sistem tidak hanya mengetahui di mana objek muncul pada satu frame, tetapi juga bagaimana objek tersebut bergerak sepanjang waktu.
 
-% === Table Data ===
-1 & Alice Smith & 89 & 5 \\
-2 & Bob Johnson & 93 & 3 \\
-3 & Carol Davis & 95 & 2 \\
-4 & Daniel Wilson & 88 & 6 \\
-5 & Eve Thompson & 97 & 1 \\
-6 & Frank Brown & 85 & 7 \\
-7 & Grace Lee & 91 & 4 \\
-8 & Henry Miller & 80 & 9 \\
-9 & Irene Garcia & 83 & 8 \\
-10 & Jack Robinson & 78 & 10 \\
-% Repeat with more rows to make it long
-11 & Kevin Harris & 76 & 11 \\
-12 & Laura Martin & 75 & 12 \\
-13 & Michael Clark & 74 & 13 \\
-14 & Natalie Lewis & 73 & 14 \\
-15 & Olivia Walker & 72 & 15 \\
-16 & Peter Hall & 71 & 16 \\
-17 & Quinn Allen & 70 & 17 \\
-18 & Rachel Young & 69 & 18 \\
-19 & Samuel King & 68 & 19 \\
-20 & Tina Wright & 67 & 20 \\
-21 & Uma Scott & 66 & 21 \\
-22 & Victor Green & 65 & 22 \\
-23 & Wendy Adams & 64 & 23 \\
-24 & Xavier Nelson & 63 & 24 \\
-25 & Yolanda Carter & 62 & 25 \\
-26 & Zachary Perez & 61 & 26 \\
-27 & Amelia Baker & 60 & 27 \\
-28 & Benjamin Rivera & 59 & 28 \\
-29 & Charlotte Rogers & 58 & 29 \\
-30 & David Murphy & 57 & 30 \\
-31 & Ethan Cooper & 56 & 31 \\
-32 & Fiona Reed & 55 & 32 \\
-33 & George Bailey & 54 & 33 \\
-34 & Hannah Cox & 53 & 34 \\
-35 & Isaac Howard & 52 & 35 \\
-36 & Julia Ward & 51 & 36 \\
-37 & Kyle Flores & 50 & 37 \\
-38 & Lily Bell & 49 & 38 \\
-39 & Mason Sanders & 48 & 39 \\
-40 & Nora Patterson & 47 & 40 \\
-41 & Owen Ramirez & 46 & 41 \\
-42 & Penelope Torres & 45 & 42 \\
-43 & Quentin Foster & 44 & 43 \\
-44 & Rebecca Gonzales & 43 & 44 \\
-45 & Sebastian Bryant & 42 & 45 \\
-46 & Taylor Alexander & 41 & 46 \\
-47 & Ursula Russell & 40 & 47 \\
-48 & Vincent Griffin & 39 & 48 \\
-49 & William Diaz & 38 & 49 \\
-50 & Zoe Simmons & 37 & 50 \\
-% (You can easily extend this list to hundreds of rows)
-\end{longtable}
+\subsection{Pose Estimation}
+Pose estimation merupakan proses yang bertujuan untuk menemukan lokasi bagian tubuh manusia dan membangun representasi kerangka tubuh (skeleton) dari data masukan seperti gambar atau video. Teknik ini mendeteksi titik-titik kunci (keypoints) seperti sendi bahu, siku, lutut, dan pergelangan tangan, kemudian menghubungkannya menjadi struktur rangka dua dimensi (2D) atau tiga dimensi (3D) (Zheng dkk. 2023).
 
-\subsubsection{Rumus}
-Contoh rumus matematika dapat ditulis seperti pada Persamaan \ref{eq:contoh1} di bawah ini. 
-Penomoran persamaan diletakkan di sebelah kanan, dan rumus ditulis dalam mode \textit{display math}.
-\begin{equation}
-E = mc^2
-\label{eq:contoh1}
-\end{equation}
+\section{Aktivitas Mencurigakan}
+Aktivitas mencurigakan merujuk pada perilaku yang menyimpang dari pola normal suatu lingkungan dan berpotensi menimbulkan dampak merugikan jika tidak segera ditangani, seperti berlari di area yang seharusnya tenang, berkelahi, berkeliaran terlalu lama, atau membawa objek berbahaya. Dalam literatur, topik ini umumnya dibahas sebagai suspicious human activity recognition, abnormal event detection, atau video anomaly detection dalam konteks sistem pemantauan (Anoopa 2022). Pendekatan deteksi aktivitas mencurigakan telah berkembang dari metode rule-based menjadi pendekatan berbasis deep learning seiring meningkatnya kemampuan komputasi dan ketersediaan dataset video beranotasi.
+\section{Metrik Evaluasi}
 
-Contoh lain penulisan rumus matematika yang lebih kompleks dapat ditulis seperti pada Persamaan \ref{eq:rumus2}.
+Evaluasi kinerja model deteksi objek dan aktivitas diperlukan untuk memastikan bahwa sistem mampu menghasilkan prediksi yang akurat dan konsisten dalam lingkungan operasional nyata. Pada sistem pengawasan berbasis CCTV, metrik evaluasi harus mampu mengukur kemampuan model dalam mengidentifikasi objek melalui \textit{bounding box} dan kelas, serta kemampuan dalam mengenali aktivitas atau kejadian tertentu. metrik evaluasi yang sering digunakan meliputi confusion matrix, precision, recall, F1‑score, dan mean Average Precision (mAP) (Zvereva 2025).
 
-\begin{align}
-f(x) &= ax^2 + bx + c \\
-f'(x) &= \frac{d}{dx}(ax^2 + bx + c) \notag \\ % tidak menampilkan nomor pada baris ini
-      &= 2ax + b \label{eq:rumus2}
-\end{align}
+\subsection{Confusion Matrix}
+Confusion matrix adalah representasi performa model dalam bentuk tabel yang membandingkan hasil prediksi dengan label sebenarnya. Matriks ini terdiri atas empat komponen utama, yaitu True Positive (TP), False Positive (FP), False Negative (FN), dan True Negative (TN). Struktur ini memungkinkan analisis terhadap pola kesalahan model, seperti kecenderungan menghasilkan alarm palsu atau gagal mendeteksi kejadian penting.
 
-Jika rumus terlalu panjang untuk ditulis dalam satu baris, gunakan lingkungan \textit{multline} seperti pada Persamaan \ref{eq:rumus3} di bawah ini.
-\begin{multline} 
-y = a_0 + a_1x + a_2x^2 + a_3x^3 + a_4x^4 + a_5x^5 + a_6x^6 + a_7x^7 \\
-    + a_8x^8 + a_9x^9 + a_{10}x^{10} \label{eq:rumus3}
-\end{multline}
+\subsection{Precision}
+Precision mengukur proporsi prediksi positif yang benar. Nilai precision yang tinggi menunjukkan bahwa model jarang memberikan deteksi positif yang keliru.
+\[
+\text{Precision} = \frac{TP}{TP + FP}
+\]
 
-Jika ada penurunan rumus yang terdiri dari beberapa baris, namun tidak memerlukan penomoran pada setiap baris, gunakan lingkungan \textit{align*}, misalnya:
+\subsection{Recall}
+Recall mengukur kemampuan model dalam mendeteksi seluruh kejadian positif yang benar.
+\[
+\text{Recall} = \frac{TP}{TP + FN}
+\]
+Dalam konteks sistem keamanan, nilai recall yang tinggi sangat penting untuk meminimalkan risiko aktivitas mencurigakan yang tidak terdeteksi.
 
-\begin{align*} 
-S &= \sum_{i=1}^{n} i^2 \\
-  &= 1^2 + 2^2 + 3^2 + \cdots + n^2 \\
-  &= \frac{n(n + 1)(2n + 1)}{6}
-\intertext{Contoh lainnya adalah rumus untuk mencari nilai rata-rata fungsi $f(x)$ pada interval $[p, q]$:}
-\bar{f} &= \frac{1}{q - p} \int_{p}^{q} f(x) \, dx \\
-        &= \frac{1}{q - p} \int_{p}^{q} (ax^2 + bx + c) \, dx \\
-        &= \frac{1}{q - p} \left[ \frac{a}{3}x^3 + \frac{b}{2}x^2 + cx \right]_p^q \\
-        &= \frac{a(q^3 - p^3)}{3(q - p)} + \frac{b(q^2 - p^2)}{2(q - p)} + c \label{eq:rumus4}
-\end{align*}
+\subsection{F1-score}
+F1-score merupakan rata-rata harmonik dari precision dan recall, memberikan penilaian yang seimbang pada kedua aspek tersebut.
+\[
+F1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+\]
+Metrik ini ideal untuk kondisi dengan distribusi kelas yang tidak seimbang.
+
+\subsection{mean Average Precision (mAP)}
+Mean Average Precision (mAP) merupakan metrik evaluasi utama pada deteksi objek. Metrik ini menghitung rata-rata presisi pada berbagai nilai ambang Intersection over Union (IoU). mAP menilai kemampuan model dalam memprediksi kelas objek sekaligus menghasilkan \textit{bounding box} yang akurat. Penggunaan mAP relevan dalam penelitian ini karena performa deteksi objek menjadi komponen dasar dalam analisis perilaku dan aktivitas mencurigakan.
 
 
-
-\subsection{Algoritma, Pseudocode, atau Kode}
-Contoh penulisan algoritma atau pseudocode dapat ditulis seperti pada Kode \ref{alg:contoh1} di bawah ini. 
-Gunakan paket \textit{listings} untuk menulis source code dalam bahasa pemrograman tertentu, seperti pada Kode \ref{lst:contoh1}. 
-
-
-% -- Example of pseudocode and source code listing --
-% -- Gunakan minipage agar listing tidak terpotong ke halaman berikutnya --
-\begin{minipage}{\textwidth} 
-\begin{lstlisting}[frame=lines, captionpos=t, caption={Contoh pseudocode}, label={alg:contoh1}]
-ALGORITHM HelloWorld
-   PRINT "Hello, World!"
-END ALGORITHM
-\end{lstlisting}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\begin{lstlisting}[language=Python, frame=single, caption={Contoh source code Python}, captionpos=t, label={lst:contoh1}]
-def hello_world():
-    print("Hello, World!")       
-hello_world()
-\end{lstlisting}
-\end{minipage}
-
-
-\section{Beberapa Kesalahan Penulisan yang Sering Terjadi}
-\subsection{Penggunaan Kata "di mana" atau "dimana"}
-Banyak yang menuliskan kata "di mana" atau "dimana" sebagai pengganti kata "which" dalam bahasa Inggris. 
-Padahal, penggunaan kata "di mana" atau "dimana" tidak tepat dalam konteks tersebut. Demikian juga untuk kata serupa, misalnya "yang mana".
-Kata "di mana" atau "dimana" ini harus diganti dengan kata lain, seperti "dengan", "tempat", "yang", dan sebagainya tergantung kalimatnya.
-Penjelasan lengkap dapat dilihat pada \autocite{BPBI}.
-
-\subsection{Penggunaan Kata "sedangkan" dan "sehingga"}
-
-\begin{table}[t]
-  \begin{tabular}{|c|l|l|}
-  \hline
-  Kata & Salah & Benar \\ \hline
-  sedangkan & \begin{tabular}[c]{@{}c@{}}Sedangkan sistem lama masih\\ digunakan oleh banyak pengguna.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Sistem lama masih digunakan\\ oleh banyak pengguna,\\ sedangkan sistem baru belum siap.\end{tabular} \\ \hline
-  sehingga & \begin{tabular}[c]{@{}c@{}}Sehingga sistem lama masih\\ digunakan oleh banyak pengguna.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Sistem lama masih digunakan\\ oleh banyak pengguna sehingga\\ sistem baru belum siap.\end{tabular} \\ \hline
-  \end{tabular}
-  \caption{Contoh penggunaan kata "sedangkan" dan "sehingga"}
-  \label{tbl:sedangkan_sehingga}
-\end{table}
-
-Kata "sedangkan" dan "sehingga" adalah kata hubung atau konjungsi. 
-Konjungsi adalah kata atau ungkapan yang menghubungkan satuan bahasa 
-(kata, frasa, klausa, dan kalimat). 
-Konjungsi dapat dibagi menjadi konjungsi intrakalimat dan antarkalimat.  
-Kata "sedangkan" menghubungkan dua klausa yang bersifat kontrasif, 
-sedangkan "sehingga" menghubungkan dua klausa yang bersifat kausal. 
-Dalam ragam formal, kata hubung “sedangkan” dan “sehingga” hanya dapat digunakan 
-sebagai konjungsi intrakalimat sehingga kedua konjungsi itu \textbf{tidak dapat diletakkan pada awal kalimat}.
-Selain itu, penggunaan kata "sedangkan" harus didahului oleh koma (,), sedangkan kata "sehingga" tidak perlu didahului oleh koma (,).
-Contoh penggunaan yang benar dan salah dapat dilihat pada Tabel \ref{tbl:sedangkan_sehingga}.
-
-
-\subsection{Penggunaan Istilah yang Tidak Baku}
-Ada beberapa istilah yang sering digunakan dalam pembicaraan sehari-hari, tetapi tidak baku dalam penulisan ilmiah.
-Beberapa istilah tersebut antara lain:
-\begin{enumerate}
-  \item analisa $\rightarrow$ analisis
-  \item eksisting atau existing $\rightarrow$ yang ada atau saat ini
-  \item bisnis proses $\rightarrow$ proses bisnis
-  \item user $\rightarrow$ pengguna
-  \item system $\rightarrow$ sistem
-  \item database $\rightarrow$ basis data
-  \item aktifitas $\rightarrow$ aktivitas
-  \item efektifitas $\rightarrow$ efektivitas
-  \item sosial media $\rightarrow$ media sosial
-\end{enumerate}
-
-\subsection{Pemisah Desimal dan Ribuan}
-Tanda pemisah desimal dalam bahasa Indonesia adalah tanda koma, contoh:
-\begin{enumerate}
-  \item (Salah) Akurasi naik menjadi 50.6\% 
-  \item (Benar) Akurasi naik menjadi 50,6\% 
-\end{enumerate}
-
-\subsection{Daftar atau \textit{List}}
-Ada beberapa aturan penulisan daftar atau \textit{list} yang perlu diperhatikan, antara lain:
-\begin{enumerate}[a)]
-\item Jika memungkinkan, hindari penggunaan “bullet points” atau sejenisnya. Sebaiknya, gunakan angka (1, 2, 3, ...) atau huruf (a, b, c, …). Dengan demikian, pembaca dapat dengan mudah melihat jumlah \textit{item} atau \textit{list}. 
-\item Jika dalam daftar hanya ada satu item, tidak perlu menggunakan nomor urut.
-\item Penjelasan atau deskripsi suatu item sebaiknya menyatu dengan judul item tersebut, tidak berbeda halaman. Contoh yang salah: judul item ada di halaman 10, namun deskripsinya di halaman 11. Sebaiknya pindahkan judul tersebut ke halaman 11.
-\item Jika penjelasan atau deskripsi suatu item cukup panjang, misalnya lebih dari 1 halaman atau terdiri atas beberapa paragraf, sebaiknya setiap item tersebut dijadikan judul subbab, kecuali jika level subbab sudah mencapai level 4. 
-\end{enumerate}
-
-\subsection{Penggunaan Kata "masing-masing" dan "setiap"}
-Kata “masing-masing” digunakan di belakang kata yang diterangkan, misalnya 
-"Setiap proses menggunakan algoritma masing-masing". Kata “tiap-tiap” atau “setiap”
-ditempatkan di depan kata yang diterangkan, misalnya
-"Setiap proses menggunakan algoritma tertentu".
+\section{Penelitian Terkait}
+\lipsum[19-20]
